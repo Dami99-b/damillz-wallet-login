@@ -1,16 +1,17 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { resolve } from 'path'
 
 export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      crypto: 'crypto-browserify', // Fix for crypto in browser
-      stream: 'stream-browserify', // Needed by crypto-browserify
-    },
+      process: 'process/browser',
+      stream: 'stream-browserify',
+      crypto: 'crypto-browserify',
+    }
   },
   define: {
-    global: {},        // Polyfill for packages expecting global
-    'process.env': {}, // Avoid "process is not defined"
-  },
+    'process.env': {}
+  }
 })
