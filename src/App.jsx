@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Web3Auth } from "@web3auth/modal";
 import { Connection, clusterApiUrl } from "@solana/web3.js";
 import "./App.css";
-import rocketGif from "./assets/rocket.gif";
+import rocketGif from "./rocket.gif";
 
 const clientId =
   "BFWgOhpnYUMA0s0CjAvoxYi14zxeqfyTebP8T4twXzksRVhsupLcGkfDSS_c_nfx_vNJG2zbpnfofE6RTUa-pHI";
