@@ -1,4 +1,5 @@
 import process from 'process';
+window.process = process;
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
