@@ -1,5 +1,5 @@
 import process from 'process';
-window.process = process;
+window.process = process; // Make process available globally
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
