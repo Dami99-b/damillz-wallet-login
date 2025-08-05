@@ -1,30 +1,15 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import { resolve } from 'path'
-import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfill'
 
-// https://vitejs.dev/config/
+// Fix for `process is not defined`
 export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      process: 'process/browser',
+      process: 'process/browser', // use process polyfill
     },
   },
   define: {
-    'process.env': {},
+    'process.env': {}, // prevent undefined env
   },
-  optimizeDeps: {
-    esbuildOptions: {
-      define: {
-        global: 'globalThis',
-      },
-      plugins: [
-        NodeGlobalsPolyfillPlugin({
-          process: true,
-          buffer: true
-        })
-      ]
-    }
-  }
 })
